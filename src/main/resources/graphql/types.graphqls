@@ -1,0 +1,35 @@
+type Book {
+    id: Int
+    title: String
+    author: String
+    isbn: String
+    page: [Page]
+}
+
+type Page {
+    id: Int
+    number: Int
+    content: String
+    chapter: String
+}
+
+input BookFilter {
+    title: String
+}
+
+input BookIdFilter {
+    id: Int
+}
+
+input BookRequest {
+    title: String!
+    author: String
+    isbn: String
+}
+
+input PageRequest {
+    number: Int
+    content: String
+    chapter: String
+    bookId: Int
+}

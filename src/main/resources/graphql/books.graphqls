@@ -1,46 +1,10 @@
-type Book {
-    id: Int
-    title: String
-    author: String
-    isbn: String
-    page: [Page]
-}
-
-type Page {
-    id: Int
-    number: Int
-    content: String
-    chapter: String
-}
-
 type Query {
     allBooks: [Book]
     bookByTitle(filter: BookFilter): Book
     bookById(filter: BookIdFilter): Book
 }
 
-input BookFilter {
-    title: String
-}
-
-input BookIdFilter {
-    id: Int
-}
-
 type Mutation {
     createBook(input: BookRequest): Book
     createPage(input: PageRequest): Page
-}
-
-input BookRequest {
-    title: String!
-    author: String
-    isbn: String
-}
-
-input PageRequest {
-    number: Int
-    content: String
-    chapter: String
-    bookId: Int
 }
